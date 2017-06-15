@@ -10,12 +10,12 @@ function sum(num1, num2) {
   var string = 'The sum of ' + num1 + ' and ' + num2 + ' is ' + newSum + '.';
   var newArray = [newSum, string];
   console.log(newArray);
-  return;
+  return newArray;
 };
-
+console.log(sum());
 // Here is the test for sum(); uncomment it to run it
 sum(4, 7);
-
+testSum(4, 7);
 // Once you get the test passing, do an a-c-p cycle.
 
 /////////////////////////////////////
@@ -30,11 +30,12 @@ function multiply(num1, num2) {
   var string = 'The product of ' + num1 + ' and ' + num2 + ' is ' + newSum + '.';
   var newArray = [newSum, string];
   console.log(newArray);
-  return;
+  return newArray;
 }
 // Here is the test for multiply(); uncomment it to run it
+console.log(multiply());
 multiply(4,7);
-
+testMultiply(4,7);
 // Once you get the test passing, do an a-c-p cycle.
 
 /////////////////////////////////////
@@ -50,15 +51,15 @@ function sumAndMultiply(num1, num2, num3) {
   var newSum = num1 + num2 + num3;
   var newProd = num1 * num2 * num3;
   var newArray = [ newSum, newProd,
-    num1 + ' and ' + num2 + ' and ' + num3 + ' sum ' + ' to ' + newSum + '.',
+    num1 + ' and ' + num2 + ' and ' + num3 + ' sum to ' + newSum + '.',
     'The product of ' + num1 + ' and ' + num2 + ' and ' + num3 + ' is ' + newProd + '.'
   ];
   console.log(newArray);
-  return;
-};
+  return newArray;
+}
 // Here is the test for sumAndMultiply(); uncomment it to run it
 sumAndMultiply(4,7,5);
-
+testSumAndMultiply(4,7,5);
 // Once you get the test passing, do an a-c-p cycle.
 
 /////////////////////////////////////
@@ -69,16 +70,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumArray(testArray) {
-  testArray = [2,3,4];
+  //testArray = [2,3,4];
   var newSum = testArray[0] + testArray[1] + testArray[2];
   var string = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + newSum + ' is their sum.';
-  var newArray = [newSum + string];
+  var newArray = [newSum, string];
   console.log(newArray);
-  return;
+  return newArray;
 };
 // Here is the test for sumArray(); uncomment it to run it
+testArray = [2, 3, 4];
 sumArray(testArray);
-
+testSumArray(testArray);
 // Once you get the test passing, do an a-c-p cycle.
 
 /////////////////////////////////////
@@ -89,16 +91,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray2) {
-  testArray2 = [2,3,4];
   var newProd = testArray2[0] * testArray2[1] * testArray2[2];
-  var string = 'The numbers ' + testArray2[0] + ',' + testArray2[1] + ',' + testArray2[2] + ' have a product of ' + newProd;
-  var newArray = [newProd + string];
+  var string = 'The numbers ' + testArray2[0] + ',' + testArray2[1] + ',' + testArray2[2] + ' have a product of ' + newProd + '.';
+  var newArray = [newProd, string];
   console.log(newArray);
-  return;
+  return newArray;
 };
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
-
+testArray2 = [2, 3, 4];
+multiplyArray(testArray2);
+testMultiplyArray(testArray2);
 // Once you get the test passing, do an a-c-p cycle.
 
 /////////////////////////////////////
@@ -111,7 +113,7 @@ testMultiplyArray(testArray);
 /////////////////////////////////////
 /////////////////////////////////////
 //////////////////////////////////////
-/*
+
 function testSum() {
   if (sum(4,7)[1] === 'The sum of 4 and 7 is 11.') {
     console.log('%c TEST FOR sum() PASSES', 'color: green');
@@ -145,10 +147,9 @@ function testSumArray() {
 }
 
 function testMultiplyArray() {
-  if (multiplyArray(testArray)[1] === 'The numbers 2,3,4 have a product of 24.') {
+  if (multiplyArray(testArray2)[1] === 'The numbers 2,3,4 have a product of 24.') {
     console.log('%c TEST FOR multiplyArray() PASSES', 'color: green');
   } else {
     console.log('%c TEST FOR multiplyArray() FAILS', 'color: red');
   }
 }
-*/
